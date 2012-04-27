@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+html {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: white;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 1em 0em;
+  border: 1px solid black;
+}
+th, td {
+  border: 1px solid black;
+  padding: 0.1em 0.2em;
+  height: 1.5em;
+  width: 12em;
+}
+td.colspan4, th.colspan4 {
+    width: 48em;
+}
+td.colspan3, th.colspan3 {
+    width: 36em;
+}
+td.colspan2, th.colspan2 {
+    width: 24em;
+}
+th {
+  background-color: rgb(192, 192, 192);
+  color: black;
+  height: 1.7em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+td.name {
+  background-color: rgb(240, 240, 240);
+  letter-spacing: 0.1em;
+}
+td.name, th.name {
+  width: 10em;
+}
+</style>
+<title>SampleTestsuite</title>
+</head>
+<body>
+<h1>SampleTestsuite</h1>
+<table border="1" id="setting">
+<tr>
+<th class="name" colspan="5">Setting</th>
+</tr>
+<tr>
+<td class="name">Documentation</td>
+<td class="colspan4" colspan="4">This is a demo Testsuite that uses SeleniumLibrary to access Google Search and at the same time some local MySQL database. This is to demonstrate how different test libraries are working together.</td>
+</tr>
+<tr>
+<td class="name">Suite Setup</td>
+<td>Connect To Database</td>
+<td>com.mysql.jdbc.Driver</td>
+<td>jdbc:mysql://localhost:${PORT}/databaselibrarydemo</td>
+<td>dblib</td>
+</tr>
+<tr>
+<td class="name">...</td>
+<td>dblib</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Suite Teardown</td>
+<td>Disconnect From Database</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>SeleniumLibrary</td>
+<td>10.0</td>
+<td>localhost</td>
+<td>4445</td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>Remote</td>
+<td><a href="http://localhost:8271">http://localhost:8271</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../resources//GoogleKeywords.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table border="1" id="testcase">
+<tr>
+<th class="name" colspan="5">Test Case</th>
+</tr>
+<tr>
+<td class="name"><a name="test_Simple Search">Simple Search</a></td>
+<td>[Documentation]</td>
+<td class="colspan3" colspan="3">Performs a Simple Google Search for codecentric AG and checks if street is shown on resulting page.</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Tags]</td>
+<td>Demo</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td><a href="http://www.google.de">http://www.google.de</a></td>
+<td>firefox</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Execute Simple Google Search</td>
+<td>codecentric AG</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>Merscheider Straße 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Capture Screenshot</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Close Browser</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_Simple Search + DB Access">Simple Search + DB Access</a></td>
+<td>[Documentation]</td>
+<td class="colspan3" colspan="3">Performs a Simple Google Search for codecentric AG and checks if street is shown on resulting page. At the same time some basic database keywords are executed to demonstrate how keyword libraries can work together.</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td><a href="http://www.google.de">http://www.google.de</a></td>
+<td>firefox</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Execute Simple Google Search</td>
+<td>codecentric AG</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>Merscheider Straße 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Execute SQL	</td>
+<td>CREATE TABLE DemoTable (Id INT NOT NULL, Name VARCHAR(255))</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Table Must Exist</td>
+<td>DemoTable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Execute SQL</td>
+<td>DROP TABLE DemoTable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Close Browser</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+</html>
