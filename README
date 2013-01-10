@@ -1,6 +1,5 @@
-Robot Framework Tutorial
+1. Robot Framework Tutorial
 ========================
-
 A Complete Example
 ------------------
 http://blog.codecentric.de/en/2012/04/robot-framework-tutorial-a-complete-example/
@@ -11,4 +10,15 @@ Part I: Robot Framework Tutorial – Overview
 Part II: Robot Framework Tutorial – A complete example
 Part III: Robot Framework IDE
 Part IV: How to Structure a Scalable And Maintainable Acceptance Test Suite
-Part V: Robot Framework Tutorial – Writing Keyword Libraries in Java 
+Part V: Robot Framework Tutorial – Writing Keyword Libraries in Java
+
+2. Git Practice
+A successful git branching model
+http://nvie.com/posts/a-successful-git-branching-model/
+
+
+3.Git, github Practice
+Git
+http://www.worldhello.net/gotgit/
+Github
+https://github.com/gotgit/gotgithub
